@@ -1,5 +1,5 @@
-## COMP 5500/4600: Deep Learning for NLP, Spring 2025 at UMass Lowell
+## COMP 5420/4420: Natural Language Processing, Spring 2026 at UMass Lowell
 
-This repository hosts the webpage for COMP 5500/4600, Spring 2025
+This repository hosts the webpage for COMP 5420/4420, Spring 2026
 
-https://text-machine-lab.github.io/dl4nlp-s2025
+https://text-machine-lab.github.io/nlp-s2026
