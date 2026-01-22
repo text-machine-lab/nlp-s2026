@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -23,12 +23,13 @@
 
 
 </head>
+
 <body>
 
     <div class="container">
         <header class="row">
-            <h4>COMP 5500/4600: Deep Learning for NLP -- Spring 2025<br/><br/>
-            <img src="images/logo.png" width="300" height="200">
+            <h4>COMP 5500/4600: Deep Learning for NLP -- Spring 2026<br /><br />
+                <img src="images/logo.png" width="300" height="200">
             </h4>
 
         </header>
@@ -38,63 +39,68 @@
             <div class="two columns">
 
                 <p>
-                <a class="button-half menu" href="index.html">Home</a>
-                <a class="button-half menu" href="schedule.html">Schedule</a>
-                <a class="button-half menu" href="resources.html">Resources</a>
-                <br/><br/>
+                    <a class="button-half menu" href="index.html">Home</a>
+                    <a class="button-half menu" href="schedule.html">Schedule</a>
+                    <a class="button-half menu" href="resources.html">Resources</a>
+                    <br /><br />
                 </p>
 
 
             </div>
 
 
-        <div class="ten columns">
+            <div class="ten columns">
 
-            <h4 style="margin-top: 0px; margin-bottom: 20px;">How to connect to UML GPUs?</h4>
-            <p>
-                Preferred way is you connect to this server with VSCode IDE. Connecting through VSCode makes it easy to work on the python files (especially the notebooks) hosted on a server.
-            </p>
-            <ul>
-                <li>Download VSCode: <a href="https://code.visualstudio.com/download">VSCode Download</a></li>
-                <li>On your local machine (your personal computer or laptop) create a `.ssh` folder in your home directory, if it's not there.</li>
-                <li>Go to `~/.ssh` from the terminal, type `nano config`, and paste the following snippet in the file:</li>
-            </ul>
+                <h4 style="margin-top: 0px; margin-bottom: 20px;">How to connect to UML GPUs?</h4>
+                <p>
+                    Preferred way is you connect to this server with VSCode IDE. Connecting through VSCode makes it easy
+                    to work on the python files (especially the notebooks) hosted on a server.
+                </p>
+                <ul>
+                    <li>Download VSCode: <a href="https://code.visualstudio.com/download">VSCode Download</a></li>
+                    <li>On your local machine (your personal computer or laptop) create a `.ssh` folder in your home
+                        directory, if it's not there.</li>
+                    <li>Go to `~/.ssh` from the terminal, type `nano config`, and paste the following snippet in the
+                        file:</li>
+                </ul>
 
-            <pre><code>
+                <pre><code>
         Host cs-gpu1
             HostName 10.77.3.20
             User &lt;Your-CS-Username&gt;
             </code></pre>
 
-            <ul>
-                <li>Open VSCode, go to the vertical panel on the leftmost part of the window, and select the `Remote Explorer` icon (it looks like a screen with triangular brackets).</li>
-                <li>You must be able to see `cs-gpu1` in the dropdown list of SSH remotes.</li>
-                <li>Connect to `cs-gpu1` and open a new terminal.</li>
-                <li><strong>Very Important</strong> - Once you open the terminal, go to:
-                    <pre><code>cd /home/public</code></pre>
-                </li>
-                <li>If you do not see a folder with your `cs-username`, create one:
-                    <pre><code>mkdir &lt;Your-CS-Username&gt;</code></pre>
-                </li>
-            </ul>
+                <ul>
+                    <li>Open VSCode, go to the vertical panel on the leftmost part of the window, and select the `Remote
+                        Explorer` icon (it looks like a screen with triangular brackets).</li>
+                    <li>You must be able to see `cs-gpu1` in the dropdown list of SSH remotes.</li>
+                    <li>Connect to `cs-gpu1` and open a new terminal.</li>
+                    <li><strong>Very Important</strong> - Once you open the terminal, go to:
+                        <pre><code>cd /home/public</code></pre>
+                    </li>
+                    <li>If you do not see a folder with your `cs-username`, create one:
+                        <pre><code>mkdir &lt;Your-CS-Username&gt;</code></pre>
+                    </li>
+                </ul>
 
-            <h4 style="margin-top: 100px; margin-bottom: 20px;">How to setup Miniconda on the server?</h4>
+                <h4 style="margin-top: 100px; margin-bottom: 20px;">How to setup Miniconda on the server?</h4>
 
-            <p>
-                If you are working on `cs-gpu1`, please follow these guidelines:
-            </p>
+                <p>
+                    If you are working on `cs-gpu1`, please follow these guidelines:
+                </p>
 
-            <p><strong>Create your own directory at `/home/public/` to store Miniconda and your trained models:</strong></p>
+                <p><strong>Create your own directory at `/home/public/` to store Miniconda and your trained
+                        models:</strong></p>
 
-            <pre><code class="language-bash">
+                <pre><code class="language-bash">
         mkdir /home/public/$(your_cs_username)
         cd /home/public/$(your_cs_username)
         nano install_miniconda.sh
             </code></pre>
 
-            <p>Paste the following lines into `install_miniconda.sh`:</p>
+                <p>Paste the following lines into `install_miniconda.sh`:</p>
 
-            <pre><code class="language-bash">
+                <pre><code class="language-bash">
         mkdir -p ./miniconda3
         wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./miniconda3/miniconda.sh
         bash ./miniconda3/miniconda.sh -b -u -p ./miniconda3
@@ -103,27 +109,28 @@
         ./miniconda3/bin/conda init zsh
             </code></pre>
 
-            <p>Run the following commands:</p>
+                <p>Run the following commands:</p>
 
-            <pre><code class="language-bash">
+                <pre><code class="language-bash">
         chmod +x ./install_miniconda.sh
         ./install_miniconda.sh
             </code></pre>
 
-            <p><strong>Sourcing conda:</strong></p>
+                <p><strong>Sourcing conda:</strong></p>
 
-            <p>Create a `source_conda.sh` file in your `/home/public/your_cs_name/` directory:</p>
+                <p>Create a `source_conda.sh` file in your `/home/public/your_cs_name/` directory:</p>
 
-            <pre><code class="language-bash">
+                <pre><code class="language-bash">
         source /home/public/your_cs_name/miniconda3/etc/profile.d/conda.sh
         conda activate base
             </code></pre>
 
-            <p><strong>Edit your bashrc:</strong></p>
+                <p><strong>Edit your bashrc:</strong></p>
 
-            <p>Then open your bashrc file (located at: `/usr/cs/grad/doc/your_cs_name/.bashrc`) and add the following lines:</p>
+                <p>Then open your bashrc file (located at: `/usr/cs/grad/doc/your_cs_name/.bashrc`) and add the
+                    following lines:</p>
 
-            <pre><code class="language-bash">
+                <pre><code class="language-bash">
         # source conda
         source /home/public/your_cs_name/source_conda.sh
 
@@ -133,20 +140,20 @@
         export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
             </code></pre>
 
-            <p><strong>Double check that everything is set up:</strong></p>
-            <ul>
-                <li>Disconnect and connect again</li>
-                <li>Run:
-                    <pre><code>source ~/.bashrc</code></pre>
-                </li>
-                <li>Run:
-                    <pre><code>which conda</code></pre>
-                    and make sure it shows the path as:
-                    <pre><code>/home/public/your_cs_name/miniconda3/bin/conda</code></pre>
-                </li>
-            </ul>
+                <p><strong>Double check that everything is set up:</strong></p>
+                <ul>
+                    <li>Disconnect and connect again</li>
+                    <li>Run:
+                        <pre><code>source ~/.bashrc</code></pre>
+                    </li>
+                    <li>Run:
+                        <pre><code>which conda</code></pre>
+                        and make sure it shows the path as:
+                        <pre><code>/home/public/your_cs_name/miniconda3/bin/conda</code></pre>
+                    </li>
+                </ul>
 
-            <h4 style="margin-top: 100px; margin-bottom: 20px;">Setting up your GitHub account</h4>
+                <h4 style="margin-top: 100px; margin-bottom: 20px;">Setting up your GitHub account</h4>
                 <p>
                     Follow these steps to set up Git with your account:
                 </p>
@@ -184,5 +191,38 @@
                     </li>
                 </ul>
 
+                <h4 style="margin-top: 100px; margin-bottom: 20px;">GitHub Copilot in VSCode</h4>
+
+                <p>
+                    Use the Student Developer Pack link (<a
+                        href="https://education.github.com/pack">https://education.github.com/pack</a>)
+                    to apply for free access to GitHub Copilot. You’ll need:
+                </p>
+
+                <ul>
+                    <li>Your GitHub account</li>
+                    <li>Your university email address</li>
+                    <li>Proof of enrollment (typically a photo of your student ID)</li>
+                </ul>
+
+                <p>
+                    GitHub usually verifies applications within a few days. Once you’re approved, install GitHub Copilot
+                    in VS Code.
+                </p>
+
+                <p>
+                    To activate Copilot in VS Code: open the Extensions view and install/enable <strong>GitHub
+                        Copilot</strong> and
+                    <strong>GitHub Copilot Chat</strong>.
+                </p>
+
+
+            </div>
 
         </div>
+
+    </div>
+
+</body>
+
+</html>
